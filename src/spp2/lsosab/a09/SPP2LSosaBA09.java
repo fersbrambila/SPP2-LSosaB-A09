@@ -19,12 +19,14 @@ public class SPP2LSosaBA09 {
         int [][] a, b,r;
         int tamaño=  solicitarTamaño();
         
-        a= crearM( "A", tamaño);
+        a= crearM("A", tamaño);
         b= crearM("B", tamaño);
         
-      
-         r= sumarM(a,b);
-        System.out.println("La suma de las matrices es" + r);
+        
+        
+        System.out.println("La suma de las matrices es");
+         sumarM(a,b);
+        
     }
 
     static int[][] crearM(String dato ,int tamaño){
@@ -83,10 +85,13 @@ public class SPP2LSosaBA09 {
 
    static int [][] sumarM(int[][] a,int[][] b){
        int[][]r= new int[a.length][a.length];
-       for (int i=0;i<r.length;i++){
-           for (int j=0;j<r.length;j++){
+       for (int i=0;i<a.length;i++){
+           for (int j=0;j<a[i].length;j++){
        
-       r[i][j]= a[i][j]+b[i][j];}
+       r[i][j]= a[i][j]+b[i][j];
+           System.out.print("-"+r[i][j]+"-");
+        }
+            System.out.println();
        
    }
        return r;
